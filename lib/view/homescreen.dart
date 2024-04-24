@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:miniprojet/view/account.dart';
 import 'package:miniprojet/view/chat.dart';
+import 'package:miniprojet/view/courses.dart';
 import 'package:miniprojet/view/home.dart';
 import 'package:miniprojet/view/scheduel.dart';
 
@@ -97,6 +98,7 @@ class _HomeState extends State<Home> {
               onTap: () {
                 _onItemTapped(3);
                 Navigator.pop(context);
+                controler.animateToPage(4, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
               },
             ),
             ListTile(
@@ -166,6 +168,7 @@ class _HomeState extends State<Home> {
           HomeScreen(),
           Chat(),
           Scheduel(),
+          Courses(),
         ],
       ),
     );
