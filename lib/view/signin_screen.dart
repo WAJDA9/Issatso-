@@ -1,10 +1,14 @@
 
 
+import 'dart:convert';
+
 import 'package:get/get.dart';
+import 'package:miniprojet/models/student.dart';
 import 'package:miniprojet/view/homescreen.dart';
 import 'package:miniprojet/view/signup_screen.dart';
 import 'package:miniprojet/widgets/button_widgeet.dart';
 
+import 'package:http/http.dart' as http;
 import '../widgets/input_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +21,14 @@ class Signin extends StatefulWidget {
 }
 
 class _SigninState extends State<Signin> {
+   String quote='';
+  Future getQuote()  async {
+    var response = await http.get(Uri.https('c044-197-238-127-59.ngrok-free.app','student'));
+    print(response);
+    var json = jsonDecode(response.body);
+    print(json);
+     
+   }
  
  String? errorMessage ='' ; 
   String? errorPassMessage ='' ; 
@@ -71,6 +83,13 @@ class _SigninState extends State<Signin> {
                 Get.to( 
                   ()=>Home()
                 );
+                Student student=Student(firstname: 'wajdi',lasrname: 'wajdi',email: "wajdi@gmail.com",password: "wa",ncin: "12345678",gender: "male",departmentId: "1");
+                 print(student.toJson());
+                 http.post(Uri(path: "https://c044-197-238-127-59.ngrok-free.app/student"),
+                 body: student.toJson()
+                 );
+                 print(http.get(Uri(path: "https://c044-197-238-127-59.ngrok-free.app/student")));
+                  
                 
                 }
                 else {
@@ -102,7 +121,7 @@ class _SigninState extends State<Signin> {
                Text('Forgot Your Password?'),
               GestureDetector(
                 onTap: () {
-                  
+                  getQuote();
                 },
                 child:  Text(
                   'Reset It',

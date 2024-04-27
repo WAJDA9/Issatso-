@@ -4,6 +4,7 @@ import 'package:miniprojet/view/account.dart';
 import 'package:miniprojet/view/chat.dart';
 import 'package:miniprojet/view/courses.dart';
 import 'package:miniprojet/view/home.dart';
+import 'package:miniprojet/view/library.dart';
 import 'package:miniprojet/view/scheduel.dart';
 
 class Home extends StatefulWidget {
@@ -117,12 +118,14 @@ class _HomeState extends State<Home> {
               onTap: () {
                 _onItemTapped(5);
                 Navigator.pop(context);
+                controler.animateToPage(5, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
               },
             ),
           ],
         ),
       ),
       appBar: AppBar(
+        
         leading: Builder(
           builder: (context) {
             return IconButton(
@@ -169,6 +172,7 @@ class _HomeState extends State<Home> {
           Chat(),
           Scheduel(),
           Courses(),
+          Library()
         ],
       ),
     );
