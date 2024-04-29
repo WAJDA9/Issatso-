@@ -15,10 +15,15 @@ class _AccountState extends State<Account> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset("assets/profile.png"),
-            Text("Louey Belkahla", style: TextStyle(fontSize: 15, )),
+            ClipOval(
+              
+              child: Image.asset(
+                height: 200,
+                width: 200,
+                "assets/image.png")),
+            Text("Wajdi Zakhama", style: TextStyle(fontSize: 15, )),
             Text("99218004", style: TextStyle(fontSize: 10,) ) ,
-            Text("ING A1-03", style: TextStyle(fontSize: 8,) ) ,
+            Text("ING A2-GL-03", style: TextStyle(fontSize: 8,) ) ,
             SizedBox(height: 40,),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 50,vertical:17),

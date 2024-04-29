@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:miniprojet/view/absences.dart';
 import 'package:miniprojet/view/account.dart';
 import 'package:miniprojet/view/calendar.dart';
 import 'package:miniprojet/view/chat.dart';
@@ -7,6 +8,7 @@ import 'package:miniprojet/view/courses.dart';
 import 'package:miniprojet/view/home.dart';
 import 'package:miniprojet/view/library.dart';
 import 'package:miniprojet/view/scheduel.dart';
+import 'package:miniprojet/view/test.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -93,6 +95,8 @@ class _HomeState extends State<Home> {
       onTap: () {
         _onItemTapped(2);
         Navigator.pop(context);
+        controler.animateToPage(4, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+
       },
     ),
     ListTile(
@@ -105,7 +109,7 @@ class _HomeState extends State<Home> {
       onTap: () {
         _onItemTapped(3);
         Navigator.pop(context);
-        controler.animateToPage(4, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+        controler.animateToPage(5, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
       },
     ),
     ListTile(
@@ -118,20 +122,20 @@ class _HomeState extends State<Home> {
       onTap: () {
         _onItemTapped(4);
         Navigator.pop(context);
-        controler.animateToPage(5, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+        controler.animateToPage(6, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
       },
     ),
     ListTile(
       leading: Icon(Icons.library_books),
       title: Semantics(
-        label: 'Library',
+        label: 'tap to open library',
         child: Text('Library'),
       ),
       selected: _selectedIndex == 6,
       onTap: () {
         _onItemTapped(5);
         Navigator.pop(context);
-        controler.animateToPage(6, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+        controler.animateToPage(7, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
       },
     ),
   ],
@@ -177,7 +181,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: PageView(
-        
+        physics: NeverScrollableScrollPhysics(  ),
         controller: controler,
         children: [
           
@@ -185,6 +189,7 @@ class _HomeState extends State<Home> {
           HomeScreen(),
           Chat(),
           ScheduelScreen(),
+          AbsencesScreen(),
           Courses(),
           TableComplexExample(),
           Library()

@@ -4,11 +4,15 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 const apiKey = "AIzaSyDbxl3dIcwD97JLPcwipTPuYSy6FhHth-o";
 var prompts = ["Hello"];
 var responses = ["Hi"];
-
+final model = GenerativeModel(model: 'gemini-pro', apiKey: apiKey);
 class Chat extends StatefulWidget {
   const Chat({super.key});
+
+ 
+
   Future test() async {
-    final model = GenerativeModel(model: 'gemini-pro', apiKey: apiKey);
+    
+   
     final content = [Content.text(prompts[prompts.length - 1])];
     final response = await model.generateContent(content);
     responses.add(response.text.toString());
@@ -17,10 +21,12 @@ class Chat extends StatefulWidget {
 
   @override
   State<Chat> createState() => _ChatState();
+  
 }
 
 class _ChatState extends State<Chat> {
   var _cont = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {

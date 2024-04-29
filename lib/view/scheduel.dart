@@ -151,42 +151,50 @@ class _ScheduelScreenState extends State<ScheduelScreen> {
               future: fetchSchedule(),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  return DataTable(
-                    columns: <DataColumn>[
-                      for (var header in snapshot.data![0].toJson().keys)
-                        DataColumn(
-                            label: Text(
-                          header,
-                          style: TextStyle(
-                              fontFamily: 'ArimaMadurai', fontSize: 16),
-                        )),
-                    ],
-                    rows: <DataRow>[
-                      for (var index = 0;
-                          index < snapshot.data!.length;
-                          index++)
-                        DataRow(
-                          color: MaterialStateProperty.resolveWith<Color>(
-                              (Set<MaterialState> states) {
-                            if (index % 2 == 0) {
-                              return Color(0xFF6190BA);
-                            } else {
-                              return Color.fromARGB(255, 40, 67, 91);
-                            }
-                          }),
-                          cells: [
-                            for (var cell
-                                in snapshot.data![index].toJson().values)
-                              DataCell(
-                                Text(
-                                  cell,
-                                  style: TextStyle(
-                                      fontFamily: 'ArimaMadurai', fontSize: 16),
+                  return SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: DataTable(
+                      
+                      border: TableBorder.all(
+                        color: Colors.white,
+                        width: 2,
+                      ),
+                      columns: <DataColumn>[
+                        for (var header in snapshot.data![0].toJson().keys)
+                          DataColumn(
+                              label: Text(
+                            header,
+                            style: TextStyle(
+                                fontFamily: 'ArimaMadurai', fontSize: 16),
+                          )),
+                      ],
+                      rows: <DataRow>[
+                        for (var index = 0;
+                            index < snapshot.data!.length;
+                            index++)
+                          DataRow(
+                            color: MaterialStateProperty.resolveWith<Color>(
+                                (Set<MaterialState> states) {
+                              if (index % 2 == 0) {
+                                return Color(0xFF6190BA);
+                              } else {
+                                return Color.fromARGB(255, 40, 67, 91);
+                              }
+                            }),
+                            cells: [
+                              for (var cell
+                                  in snapshot.data![index].toJson().values)
+                                DataCell(
+                                  Text(
+                                    cell,
+                                    style: TextStyle(
+                                        fontFamily: 'ArimaMadurai', fontSize: 16),
+                                  ),
                                 ),
-                              ),
-                          ],
-                        ),
-                    ],
+                            ],
+                          ),
+                      ],
+                    ),
                   );
                 } else if (snapshot.hasError) {
                   return Center(child: Text('Error: ${snapshot.error}'));
