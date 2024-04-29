@@ -4,14 +4,17 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:miniprojet/models/student.dart';
-import 'package:miniprojet/view/homescreen.dart';
-import 'package:miniprojet/view/signup_screen.dart';
+import 'package:miniprojet/view/Teacher/homescreen.dart';
+import 'package:miniprojet/view/student/homescreen.dart';
+import 'package:miniprojet/view/student/signup_screen.dart';
+
 import 'package:miniprojet/widgets/button_widgeet.dart';
 
 import 'package:http/http.dart' as http;
-import '../widgets/input_field_widget.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:miniprojet/widgets/input_field_widget.dart';
 
 class Signin extends StatefulWidget {
    Signin({Key? key}) : super(key: key);
@@ -80,9 +83,14 @@ class _SigninState extends State<Signin> {
                   "Success", "loged in",
                       backgroundColor: Color.fromARGB(132, 76, 244, 135));
 
-                Get.to( 
+                if(emailcontroller.text.contains("wajdi")){
+                  Get.to( 
                   ()=>Home()
                 );
+                }
+                else{
+                  Get.to(HomeT());
+                }
                 Student student=Student(firstname: 'wajdi',lasrname: 'wajdi',email: "wajdi@gmail.com",password: "wa",ncin: "12345678",gender: "male",departmentId: "1");
                  print(student.toJson());
                  http.post(Uri(path: "https://c044-197-238-127-59.ngrok-free.app/student"),

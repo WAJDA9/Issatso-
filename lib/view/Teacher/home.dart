@@ -4,10 +4,9 @@ import 'package:miniprojet/widgets/carrousel.dart';
 
 final List<Image> imgList = [
   Image.asset('assets/news1.png'),
-  
-   Image.asset('assets/news1.png'),
+   Image.asset('assets/news2.png'),
   Image.asset('assets/news1.png'),
-  Image.asset('assets/news1.png'),
+  Image.asset('assets/news2.png'),
 
  
 ];
@@ -28,14 +27,14 @@ final List<Image> imgList2 = [
  
 ];
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreenT extends StatefulWidget {
+  const HomeScreenT({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreenT> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreenT> {
    int _current = 0;
   final CarouselController _controller = CarouselController();
   final CarouselController _controller1 = CarouselController();
@@ -52,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Welcome Back Louey"),
+                      Text("Welcome Back Dr. Slim"),
                       Icon(Icons.notifications_none_outlined),
                     ],
                   ),

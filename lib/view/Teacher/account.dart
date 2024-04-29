@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:miniprojet/view/student/signin_screen.dart';
 
-class Account extends StatefulWidget {
-  const Account({super.key});
+class AccountT extends StatefulWidget {
+  const AccountT({super.key});
 
   @override
-  State<Account> createState() => _AccountState();
+  State<AccountT> createState() => _AccountState();
 }
 
-class _AccountState extends State<Account> {
+class _AccountState extends State<AccountT> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -20,10 +22,10 @@ class _AccountState extends State<Account> {
               child: Image.asset(
                 height: 200,
                 width: 200,
-                "assets/image.png")),
-            Text("Wajdi Zakhama", style: TextStyle(fontSize: 15, )),
-            Text("99218004", style: TextStyle(fontSize: 10,) ) ,
-            Text("ING A2-GL-03", style: TextStyle(fontSize: 8,) ) ,
+                "assets/e.jpeg")),
+            Text("Dr. Slim Slim", style: TextStyle(fontSize: 15, )),
+            Text("99111888", style: TextStyle(fontSize: 10,) ) ,
+            Text("Docteur en mecatronique", style: TextStyle(fontSize: 8,) ) ,
             SizedBox(height: 40,),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 50,vertical:17),
@@ -81,7 +83,7 @@ class _AccountState extends State<Account> {
                 children: [
                   Icon(Icons.card_membership),
                   SizedBox(width: 17,),
-                  Text("Student Card"),
+                  Text("Professor ID"),
                   SizedBox(width: 1,),
                   Icon(Icons.arrow_forward_ios),
                 ],
@@ -102,19 +104,24 @@ class _AccountState extends State<Account> {
                 ],
               ),
             ),
-            Container(
-               margin: EdgeInsets.symmetric(horizontal: 50,vertical:17),
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(Icons.logout),
-                  SizedBox(width: 17,),
-                  Text("Logout",style: TextStyle(color: Colors.red),),
-                  SizedBox(width: 1,),
-                  Icon(Icons.arrow_forward_ios),
-                ],
+            GestureDetector(
+              onTap: (){
+                Get.to(Signin());
+              },
+              child: Container(
+                 margin: EdgeInsets.symmetric(horizontal: 50,vertical:17),
+                width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.logout),
+                    SizedBox(width: 17,),
+                    Text("Logout",style: TextStyle(color: Colors.red),),
+                    SizedBox(width: 1,),
+                    Icon(Icons.arrow_forward_ios),
+                  ],
+                ),
               ),
             ),
         

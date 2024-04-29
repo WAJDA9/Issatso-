@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 import 'package:get/get.dart';
-import 'package:miniprojet/view/home.dart';
-import 'package:miniprojet/view/homescreen.dart';
-import 'package:miniprojet/view/signin_screen.dart';
+import 'package:miniprojet/view/student/signin_screen.dart';
+
 
 
 void main() {
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF6190BA)),
         useMaterial3: true,
       ),
-      home: Home(),
+      home: Signin(),
     );
   }
 }

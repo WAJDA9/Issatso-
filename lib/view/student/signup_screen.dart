@@ -1,13 +1,15 @@
 
 import 'package:get/get.dart';
-import 'package:miniprojet/view/homescreen.dart';
+import 'package:miniprojet/view/student/homescreen.dart';
+
 import 'package:miniprojet/widgets/button_widgeet.dart';
 
-import '../widgets/input_field_widget.dart';
+
 
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:miniprojet/widgets/input_field_widget.dart';
 
 class Signup extends StatefulWidget {
   Signup({Key? key}) : super(key: key);

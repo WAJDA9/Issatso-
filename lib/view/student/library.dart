@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:get/get.dart';
-import 'package:miniprojet/view/leaderboard.dart';
+import 'package:miniprojet/view/student/leaderboard.dart';
+
 
 class Library extends StatefulWidget {
   const Library({super.key});

@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:image_picker/image_picker.dart';
 
+void run(){
+  runApp(ChatS());
+}
+
 const apiKey = "AIzaSyDbxl3dIcwD97JLPcwipTPuYSy6FhHth-o";
 var prompts = ["Hello"];
 var responses = ["Hi"];

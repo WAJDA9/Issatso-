@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miniprojet/view/absences.dart';
-import 'package:miniprojet/view/account.dart';
-import 'package:miniprojet/view/calendar.dart';
-import 'package:miniprojet/view/chat.dart';
-import 'package:miniprojet/view/courses.dart';
-import 'package:miniprojet/view/home.dart';
-import 'package:miniprojet/view/library.dart';
-import 'package:miniprojet/view/scheduel.dart';
-import 'package:miniprojet/view/test.dart';
+
+import 'package:miniprojet/view/student/absences.dart';
+import 'package:miniprojet/view/student/account.dart';
+import 'package:miniprojet/view/student/calendar.dart';
+import 'package:miniprojet/view/student/chat.dart';
+import 'package:miniprojet/view/student/courses.dart';
+import 'package:miniprojet/view/student/home.dart';
+import 'package:miniprojet/view/student/library.dart';
+import 'package:miniprojet/view/student/scheduel.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
